@@ -1,0 +1,494 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Type Declarations &mdash; pyVHDLModel 0.10.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Object Declarations" href="ObjectDeclarations.html" />
+    <link rel="prev" title="Subprogram Declarations" href="SubprogramDefinitions.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> pyVHDLModel
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.9
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Installation.html">Installation/Updates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Dependency.html">Dependency</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">VHDL Language Model</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Miscellaneous.html">Concepts not defined by VHDL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Enumerations.html">Enumerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DesignUnits.html">Design Units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InterfaceItems.html">Interface Items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SubprogramDefinitions.html">Subprogram Declarations</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Type Declarations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#scalar-types">Scalar Types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#enumeration">Enumeration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#integer">Integer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#real">Real</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#physical">Physical</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#composite-types">Composite Types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#array">Array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#record">Record</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#protected">Protected</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#access">Access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#file">File</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ObjectDeclarations.html">Object Declarations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ConcurrentStatements.html">Concurrent Statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SequentialStatements.html">Sequential Statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Expressions.html">Literals and Expressions</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pyVHDLModel/pyVHDLModel.html">pyVHDLModel</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ChangeLog/index.html">ChangeLog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../License.html">Apache License 2.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Doc-License.html">Creative Commons Attribution 4.0 International</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pyVHDLModel</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">VHDL Language Model</a> &raquo;</li>
+        
+      <li>Type Declarations</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/Paebbels/pyVHDLModel/blob/main/doc/LanguageModel/TypeDefinitions.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <style type="text/css">
+  span.bolditalic {font-weight: bold; font-style: italic; }
+  span.underline {text-decoration: underline; }
+  span.xlarge {font-size: x-large; }
+</style><div class="section" id="type-declarations">
+<span id="vhdlmodel-types"></span><h1>Type Declarations<a class="headerlink" href="#type-declarations" title="Permalink to this headline">¶</a></h1>
+<p>VHDL has types (also called a base type) and subtypes. The following shows VHDL’s type hierarchy:</p>
+<p class="rubric">Type Hierarchy</p>
+<ul class="simple">
+<li><p>Types</p>
+<ul>
+<li><p><a class="reference internal" href="#vhdlmodel-scalartypes"><span class="std std-ref">Scalar Types</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#vhdlmodel-enumeratedtypes"><span class="std std-ref">Enumeration</span></a></p></li>
+<li><p><a class="reference internal" href="#vhdlmodel-integertypes"><span class="std std-ref">Integer</span></a></p></li>
+<li><p><a class="reference internal" href="#vhdlmodel-realtypes"><span class="std std-ref">Real</span></a></p></li>
+<li><p><a class="reference internal" href="#vhdlmodel-physicaltypes"><span class="std std-ref">Physical</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#vhdlmodel-compositetypes"><span class="std std-ref">Composite Types</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#vhdlmodel-arraytypes"><span class="std std-ref">Array</span></a></p></li>
+<li><p><a class="reference internal" href="#vhdlmodel-recordtypes"><span class="std std-ref">Record</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#vhdlmodel-protectedtypes"><span class="std std-ref">Protected</span></a></p></li>
+<li><p><a class="reference internal" href="#vhdlmodel-accesstypes"><span class="std std-ref">Access</span></a></p></li>
+<li><p><a class="reference internal" href="#vhdlmodel-filetypes"><span class="std std-ref">File</span></a></p></li>
+</ul>
+</li>
+<li><p>Subtype</p></li>
+</ul>
+<p class="rubric">Class Hierarchy</p>
+<div class="graphviz"><object data="../_images/inheritance-0f52be85a49a2ee968bff567619ffb876e8022a5.svg" type="image/svg+xml" class="inheritance graphviz">
+<p class="warning">Inheritance diagram of pyVHDLModel.VHDLModel.EnumeratedType, pyVHDLModel.VHDLModel.IntegerType, pyVHDLModel.VHDLModel.RealType, pyVHDLModel.VHDLModel.PhysicalType, pyVHDLModel.VHDLModel.ArrayType, pyVHDLModel.VHDLModel.RecordType, pyVHDLModel.VHDLModel.ProtectedType, pyVHDLModel.VHDLModel.AccessType, pyVHDLModel.VHDLModel.FileType</p></object></div>
+<div class="section" id="scalar-types">
+<span id="vhdlmodel-scalartypes"></span><h2>Scalar Types<a class="headerlink" href="#scalar-types" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="enumeration">
+<span id="vhdlmodel-enumeratedtypes"></span><h3>Enumeration<a class="headerlink" href="#enumeration" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Write documentation.</p>
+</div>
+<p><strong>Condensed definition of class</strong> <a class="reference internal" href="../pyVHDLModel/pyVHDLModel.VHDLModel.html#pyVHDLModel.VHDLModel.EnumeratedType" title="pyVHDLModel.VHDLModel.EnumeratedType"><code class="xref py py-class docutils literal notranslate"><span class="pre">EnumeratedType</span></code></a>:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nd">@export</span>
+<span class="k">class</span> <span class="nc">EnumeratedType</span><span class="p">(</span><span class="n">ScalarType</span><span class="p">,</span> <span class="n">DiscreteType</span><span class="p">):</span>
+  <span class="c1"># inherited from ModelEntity</span>
+  <span class="nd">@property</span>
+  <span class="k">def</span> <span class="nf">Parent</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ModelEntity</span><span class="p">:</span>
+
+  <span class="c1"># inherited from NamedEntity</span>
+  <span class="nd">@property</span>
+  <span class="k">def</span> <span class="nf">Name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+
+  <span class="c1"># from EnumeratedType</span>
+  <span class="nd">@property</span>
+  <span class="k">def</span> <span class="nf">Elements</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="integer">
+<span id="vhdlmodel-integertypes"></span><h3>Integer<a class="headerlink" href="#integer" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-todo admonition" id="id2">
+<p class="admonition-title">Todo</p>
+<p>Write documentation.</p>
+</div>
+<p><strong>Condensed definition of class</strong> <a class="reference internal" href="../pyVHDLModel/pyVHDLModel.VHDLModel.html#pyVHDLModel.VHDLModel.IntegerType" title="pyVHDLModel.VHDLModel.IntegerType"><code class="xref py py-class docutils literal notranslate"><span class="pre">IntegerType</span></code></a>:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nd">@export</span>
+<span class="k">class</span> <span class="nc">IntegerType</span><span class="p">(</span><span class="n">RangedScalarType</span><span class="p">,</span> <span class="n">NumericType</span><span class="p">,</span> <span class="n">DiscreteType</span><span class="p">):</span>
+  <span class="c1"># inherited from ModelEntity</span>
+  <span class="nd">@property</span>
+  <span class="k">def</span> <span class="nf">Parent</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ModelEntity</span><span class="p">:</span>
+
+  <span class="c1"># inherited from NamedEntity</span>
+  <span class="nd">@property</span>
+  <span class="k">def</span> <span class="nf">Name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+
+  <span class="c1"># inherited from RangedScalarType</span>
+  <span class="nd">@property</span>
+  <span class="k">def</span> <span class="nf">LeftBound</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;BaseExpression&#39;</span><span class="p">:</span>
+
+  <span class="nd">@property</span>
+  <span class="k">def</span> <span class="nf">RightBound</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;BaseExpression&#39;</span><span class="p">:</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="real">
+<span id="vhdlmodel-realtypes"></span><h3>Real<a class="headerlink" href="#real" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-todo admonition" id="id3">
+<p class="admonition-title">Todo</p>
+<p>Write documentation.</p>
+</div>
+<p><strong>Condensed definition of class</strong> <a class="reference internal" href="../pyVHDLModel/pyVHDLModel.VHDLModel.html#pyVHDLModel.VHDLModel.RealType" title="pyVHDLModel.VHDLModel.RealType"><code class="xref py py-class docutils literal notranslate"><span class="pre">RealType</span></code></a>:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nd">@export</span>
+<span class="k">class</span> <span class="nc">RealType</span><span class="p">(</span><span class="n">RangedScalarType</span><span class="p">,</span> <span class="n">NumericType</span><span class="p">):</span>
+  <span class="c1"># inherited from ModelEntity</span>
+  <span class="nd">@property</span>
+  <span class="k">def</span> <span class="nf">Parent</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ModelEntity</span><span class="p">:</span>
+
+  <span class="c1"># inherited from NamedEntity</span>
+  <span class="nd">@property</span>
+  <span class="k">def</span> <span class="nf">Name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+
+  <span class="c1"># inherited from RangedScalarType</span>
+  <span class="nd">@property</span>
+  <span class="k">def</span> <span class="nf">LeftBound</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;BaseExpression&#39;</span><span class="p">:</span>
+
+  <span class="nd">@property</span>
+  <span class="k">def</span> <span class="nf">RightBound</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;BaseExpression&#39;</span><span class="p">:</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="physical">
+<span id="vhdlmodel-physicaltypes"></span><h3>Physical<a class="headerlink" href="#physical" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-todo admonition" id="id4">
+<p class="admonition-title">Todo</p>
+<p>Write documentation.</p>
+</div>
+<p><strong>Condensed definition of class</strong> <a class="reference internal" href="../pyVHDLModel/pyVHDLModel.VHDLModel.html#pyVHDLModel.VHDLModel.PhysicalType" title="pyVHDLModel.VHDLModel.PhysicalType"><code class="xref py py-class docutils literal notranslate"><span class="pre">PhysicalType</span></code></a>:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nd">@export</span>
+<span class="k">class</span> <span class="nc">PhysicalType</span><span class="p">(</span><span class="n">RangedScalarType</span><span class="p">,</span> <span class="n">NumericType</span><span class="p">):</span>
+  <span class="c1"># inherited from ModelEntity</span>
+  <span class="nd">@property</span>
+  <span class="k">def</span> <span class="nf">Parent</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ModelEntity</span><span class="p">:</span>
+
+  <span class="c1"># inherited from NamedEntity</span>
+  <span class="nd">@property</span>
+  <span class="k">def</span> <span class="nf">Name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+
+  <span class="c1"># inherited from RangedScalarType</span>
+  <span class="nd">@property</span>
+  <span class="k">def</span> <span class="nf">LeftBound</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;BaseExpression&#39;</span><span class="p">:</span>
+
+  <span class="nd">@property</span>
+  <span class="k">def</span> <span class="nf">RightBound</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;BaseExpression&#39;</span><span class="p">:</span>
+
+  <span class="c1"># from PhysicalType</span>
+  <span class="nd">@property</span>
+  <span class="k">def</span> <span class="nf">PrimaryUnit</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+
+  <span class="nd">@property</span>
+  <span class="k">def</span> <span class="nf">SecondaryUnits</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]:</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="composite-types">
+<span id="vhdlmodel-compositetypes"></span><h2>Composite Types<a class="headerlink" href="#composite-types" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="array">
+<span id="vhdlmodel-arraytypes"></span><h3>Array<a class="headerlink" href="#array" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-todo admonition" id="id5">
+<p class="admonition-title">Todo</p>
+<p>Write documentation.</p>
+</div>
+<p><strong>Condensed definition of class</strong> <a class="reference internal" href="../pyVHDLModel/pyVHDLModel.VHDLModel.html#pyVHDLModel.VHDLModel.ArrayType" title="pyVHDLModel.VHDLModel.ArrayType"><code class="xref py py-class docutils literal notranslate"><span class="pre">ArrayType</span></code></a>:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nd">@export</span>
+<span class="k">class</span> <span class="nc">ArrayType</span><span class="p">(</span><span class="n">CompositeType</span><span class="p">):</span>
+  <span class="c1"># inherited from ModelEntity</span>
+  <span class="nd">@property</span>
+  <span class="k">def</span> <span class="nf">Parent</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ModelEntity</span><span class="p">:</span>
+
+  <span class="c1"># inherited from NamedEntity</span>
+  <span class="nd">@property</span>
+  <span class="k">def</span> <span class="nf">Name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+
+  <span class="c1"># from ArrayType</span>
+  <span class="nd">@property</span>
+  <span class="k">def</span> <span class="nf">Dimensions</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Range</span><span class="p">]:</span>
+
+  <span class="nd">@property</span>
+  <span class="k">def</span> <span class="nf">ElementType</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SubType</span><span class="p">:</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="record">
+<span id="vhdlmodel-recordtypes"></span><h3>Record<a class="headerlink" href="#record" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-todo admonition" id="id6">
+<p class="admonition-title">Todo</p>
+<p>Write documentation.</p>
+</div>
+<p><strong>Condensed definition of class</strong> <a class="reference internal" href="../pyVHDLModel/pyVHDLModel.VHDLModel.html#pyVHDLModel.VHDLModel.RecordType" title="pyVHDLModel.VHDLModel.RecordType"><code class="xref py py-class docutils literal notranslate"><span class="pre">RecordType</span></code></a>:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nd">@export</span>
+<span class="k">class</span> <span class="nc">RecordType</span><span class="p">(</span><span class="n">CompositeType</span><span class="p">):</span>
+  <span class="c1"># inherited from ModelEntity</span>
+  <span class="nd">@property</span>
+  <span class="k">def</span> <span class="nf">Parent</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ModelEntity</span><span class="p">:</span>
+
+  <span class="c1"># inherited from NamedEntity</span>
+  <span class="nd">@property</span>
+  <span class="k">def</span> <span class="nf">Name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+
+  <span class="c1"># from RecordType</span>
+  <span class="nd">@property</span>
+  <span class="k">def</span> <span class="nf">Members</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">RecordTypeElement</span><span class="p">]:</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="protected">
+<span id="vhdlmodel-protectedtypes"></span><h2>Protected<a class="headerlink" href="#protected" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-todo admonition" id="id7">
+<p class="admonition-title">Todo</p>
+<p>Write documentation.</p>
+</div>
+</div>
+<div class="section" id="access">
+<span id="vhdlmodel-accesstypes"></span><h2>Access<a class="headerlink" href="#access" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-todo admonition" id="id8">
+<p class="admonition-title">Todo</p>
+<p>Write documentation.</p>
+</div>
+</div>
+<div class="section" id="file">
+<span id="vhdlmodel-filetypes"></span><h2>File<a class="headerlink" href="#file" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-todo admonition" id="id9">
+<p class="admonition-title">Todo</p>
+<p>Write documentation.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ObjectDeclarations.html" class="btn btn-neutral float-right" title="Object Declarations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="SubprogramDefinitions.html" class="btn btn-neutral float-left" title="Subprogram Declarations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2016-2021 Patrick Lehmann - Boetzingen, Germany
+      <span class="lastupdated">
+        Last updated on 23.06.2021.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/buildthedocs/sphinx.theme">theme</a>
+    
+    provided by <a href="https://buildthedocs.github.io">Build the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

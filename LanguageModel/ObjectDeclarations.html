@@ -1,0 +1,508 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Object Declarations &mdash; pyVHDLModel 0.10.3 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Concurrent Statements" href="ConcurrentStatements.html" />
+    <link rel="prev" title="Type Declarations" href="TypeDefinitions.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> pyVHDLModel
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.9
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Installation.html">Installation/Updates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Dependency.html">Dependency</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Main Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">VHDL Language Model</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Miscellaneous.html">Concepts not defined by VHDL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Enumerations.html">Enumerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="DesignUnits.html">Design Units</a></li>
+<li class="toctree-l2"><a class="reference internal" href="InterfaceItems.html">Interface Items</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SubprogramDefinitions.html">Subprogram Declarations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TypeDefinitions.html">Type Declarations</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Object Declarations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#constants">Constants</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#constant">Constant</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#deferred-constant">Deferred Constant</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#generic-constant">Generic Constant</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#constant-as-parameter">Constant as Parameter</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#variables">Variables</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#variable">Variable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#variable-as-parameter">Variable as Parameter</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#shared-variable">Shared Variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#signals">Signals</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#signal">Signal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#signal-as-port">Signal as Port</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#signal-as-parameter">Signal as Parameter</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#files">Files</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#file">File</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#file-as-parameter">File as Parameter</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ConcurrentStatements.html">Concurrent Statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SequentialStatements.html">Sequential Statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Expressions.html">Literals and Expressions</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">References</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../pyVHDLModel/pyVHDLModel.html">pyVHDLModel</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ChangeLog/index.html">ChangeLog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../License.html">Apache License 2.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Doc-License.html">Creative Commons Attribution 4.0 International</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../genindex.html">Index</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pyVHDLModel</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">VHDL Language Model</a> &raquo;</li>
+        
+      <li>Object Declarations</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <a href="https://github.com/Paebbels/pyVHDLModel/blob/main/doc/LanguageModel/ObjectDeclarations.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <style type="text/css">
+  span.bolditalic {font-weight: bold; font-style: italic; }
+  span.underline {text-decoration: underline; }
+  span.xlarge {font-size: x-large; }
+</style><div class="section" id="object-declarations">
+<span id="vhdlmodel-obj"></span><h1>Object Declarations<a class="headerlink" href="#object-declarations" title="Permalink to this headline">¶</a></h1>
+<p class="rubric">Table of Content</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#vhdlmodel-constants"><span class="std std-ref">Constants</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#vhdlmodel-constant"><span class="std std-ref">Constant</span></a></p></li>
+<li><p><a class="reference internal" href="#vhdlmodel-deferredconstant"><span class="std std-ref">Deferred Constant</span></a></p></li>
+<li><p><a class="reference internal" href="#vhdlmodel-obj-genericconstant"><span class="std std-ref">Generic Constant</span></a></p></li>
+<li><p><a class="reference internal" href="#vhdlmodel-obj-parameterconstant"><span class="std std-ref">Constant as Parameter</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#vhdlmodel-variables"><span class="std std-ref">Variables</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#vhdlmodel-variable"><span class="std std-ref">Variable</span></a></p></li>
+<li><p><a class="reference internal" href="#vhdlmodel-obj-parametervariable"><span class="std std-ref">Variable as Parameter</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#vhdlmodel-sharedvariable"><span class="std std-ref">Shared Variable</span></a></p></li>
+<li><p><a class="reference internal" href="#vhdlmodel-signals"><span class="std std-ref">Signals</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#vhdlmodel-signal"><span class="std std-ref">Signal</span></a></p></li>
+<li><p><a class="reference internal" href="#vhdlmodel-obj-portsignal"><span class="std std-ref">Signal as Port</span></a></p></li>
+<li><p><a class="reference internal" href="#vhdlmodel-obj-parametersignal"><span class="std std-ref">Signal as Parameter</span></a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#vhdlmodel-files"><span class="std std-ref">Files</span></a></p>
+<ul>
+<li><p><a class="reference internal" href="#vhdlmodel-file"><span class="std std-ref">File</span></a></p></li>
+<li><p><a class="reference internal" href="#vhdlmodel-obj-parameterfile"><span class="std std-ref">File as Parameter</span></a></p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="constants">
+<span id="vhdlmodel-constants"></span><h2>Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
+<p>VHDL defines regular constants as an object. In addition, deferred constants are
+supported in package declarations. Often generics to e.g. packages or entities
+are constants. Also most <em>in</em> parameters to subprograms are constants.</p>
+<div class="graphviz"><object data="../_images/inheritance-a5b2d1a87d806133c5f3456af31fa744ffbe2ed4.svg" type="image/svg+xml" class="inheritance graphviz">
+<p class="warning">Inheritance diagram of pyVHDLModel.VHDLModel.Constant, pyVHDLModel.VHDLModel.DeferredConstant, pyVHDLModel.VHDLModel.GenericConstantInterfaceItem, pyVHDLModel.VHDLModel.ParameterConstantInterfaceItem</p></object></div>
+<div class="section" id="constant">
+<span id="vhdlmodel-constant"></span><h3>Constant<a class="headerlink" href="#constant" title="Permalink to this headline">¶</a></h3>
+<p>A constant represents immutable data. This data (value) must be assigned via a
+default expression. If a constant’s value is delayed in calculation, it’s called
+a deferred constant. See <a class="reference internal" href="#vhdlmodel-deferredconstant"><span class="std std-ref">Deferred Constant</span></a> in next section.</p>
+<p><strong>Condensed definition of class</strong> <a class="reference internal" href="../pyVHDLModel/pyVHDLModel.VHDLModel.html#pyVHDLModel.VHDLModel.Constant" title="pyVHDLModel.VHDLModel.Constant"><code class="xref py py-class docutils literal notranslate"><span class="pre">Constant</span></code></a>:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nd">@export</span>
+<span class="k">class</span> <span class="nc">Constant</span><span class="p">(</span><span class="n">BaseConstant</span><span class="p">):</span>
+  <span class="c1"># inherited from ModelEntity</span>
+  <span class="nd">@property</span>
+  <span class="k">def</span> <span class="nf">Parent</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ModelEntity</span><span class="p">:</span>
+
+  <span class="c1"># inherited from NamedEntity</span>
+  <span class="nd">@property</span>
+  <span class="k">def</span> <span class="nf">Name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+
+  <span class="c1"># inherited from Object</span>
+  <span class="nd">@property</span>
+  <span class="k">def</span> <span class="nf">SubType</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SubType</span><span class="p">:</span>
+
+  <span class="nd">@property</span>
+  <span class="k">def</span> <span class="nf">DefaultExpression</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BaseExpression</span><span class="p">:</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="deferred-constant">
+<span id="vhdlmodel-deferredconstant"></span><h3>Deferred Constant<a class="headerlink" href="#deferred-constant" title="Permalink to this headline">¶</a></h3>
+<p>If a constant’s value is delayed in calculation, it’s a deferred constant. Such
+a deferred constant has a reference to the <em>regular</em> constant of the same name.</p>
+<p><strong>Condensed definition of class</strong> <a class="reference internal" href="../pyVHDLModel/pyVHDLModel.VHDLModel.html#pyVHDLModel.VHDLModel.DeferredConstant" title="pyVHDLModel.VHDLModel.DeferredConstant"><code class="xref py py-class docutils literal notranslate"><span class="pre">DeferredConstant</span></code></a>:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nd">@export</span>
+<span class="k">class</span> <span class="nc">DeferredConstant</span><span class="p">(</span><span class="n">BaseConstant</span><span class="p">):</span>
+  <span class="c1"># inherited from ModelEntity</span>
+  <span class="nd">@property</span>
+  <span class="k">def</span> <span class="nf">Parent</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ModelEntity</span><span class="p">:</span>
+
+  <span class="c1"># inherited from NamedEntity</span>
+  <span class="nd">@property</span>
+  <span class="k">def</span> <span class="nf">Name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+
+  <span class="c1"># inherited from Object</span>
+  <span class="nd">@property</span>
+  <span class="k">def</span> <span class="nf">SubType</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SubType</span><span class="p">:</span>
+
+  <span class="c1"># inherited from WithDefaultExpression</span>
+  <span class="nd">@property</span>
+  <span class="k">def</span> <span class="nf">ConstantReference</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Constant</span><span class="p">:</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="generic-constant">
+<span id="vhdlmodel-obj-genericconstant"></span><h3>Generic Constant<a class="headerlink" href="#generic-constant" title="Permalink to this headline">¶</a></h3>
+<p>A generic without object class or a generic constant is a <em>regular</em> constant.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference internal" href="InterfaceItems.html#vhdlmodel-genericconstant"><span class="std std-ref">GenericConstantInterfaceItem</span></a> for details.</p>
+</div>
+</div>
+<div class="section" id="constant-as-parameter">
+<span id="vhdlmodel-obj-parameterconstant"></span><h3>Constant as Parameter<a class="headerlink" href="#constant-as-parameter" title="Permalink to this headline">¶</a></h3>
+<p>A subprogram parameter without object class of mode <em>in</em> or a parameter constant is a <em>regular</em> constant.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference internal" href="InterfaceItems.html#vhdlmodel-parameterconstant"><span class="std std-ref">ParameterConstantInterfaceItem</span></a> for details.</p>
+</div>
+</div>
+</div>
+<div class="section" id="variables">
+<span id="vhdlmodel-variables"></span><h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
+<div class="graphviz"><object data="../_images/inheritance-24ebcc460635cfe7b24704434e79bb265835f82c.svg" type="image/svg+xml" class="inheritance graphviz">
+<p class="warning">Inheritance diagram of pyVHDLModel.VHDLModel.Variable, pyVHDLModel.VHDLModel.ParameterVariableInterfaceItem</p></object></div>
+<div class="section" id="variable">
+<span id="vhdlmodel-variable"></span><h3>Variable<a class="headerlink" href="#variable" title="Permalink to this headline">¶</a></h3>
+<p>A variable represents mutable data in sequential regions. Assignments to
+variables have no delay. The initial value can be assigned via a default
+expression.</p>
+<p><strong>Condensed definition of class</strong> <a class="reference internal" href="../pyVHDLModel/pyVHDLModel.VHDLModel.html#pyVHDLModel.VHDLModel.Variable" title="pyVHDLModel.VHDLModel.Variable"><code class="xref py py-class docutils literal notranslate"><span class="pre">Variable</span></code></a>:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nd">@export</span>
+<span class="k">class</span> <span class="nc">Variable</span><span class="p">(</span><span class="n">Object</span><span class="p">):</span>
+  <span class="c1"># inherited from ModelEntity</span>
+  <span class="nd">@property</span>
+  <span class="k">def</span> <span class="nf">Parent</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ModelEntity</span><span class="p">:</span>
+
+  <span class="c1"># inherited from NamedEntity</span>
+  <span class="nd">@property</span>
+  <span class="k">def</span> <span class="nf">Name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+
+  <span class="c1"># inherited from Object</span>
+  <span class="nd">@property</span>
+  <span class="k">def</span> <span class="nf">SubType</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SubType</span><span class="p">:</span>
+
+  <span class="c1"># inherited from WithDefaultExpression</span>
+  <span class="nd">@property</span>
+  <span class="k">def</span> <span class="nf">DefaultExpression</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BaseExpression</span><span class="p">:</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="variable-as-parameter">
+<span id="vhdlmodel-obj-parametervariable"></span><h3>Variable as Parameter<a class="headerlink" href="#variable-as-parameter" title="Permalink to this headline">¶</a></h3>
+<p>A subprogram parameter without object class of mode <em>out</em> or a parameter variable is a <em>regular</em> variable.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference internal" href="InterfaceItems.html#vhdlmodel-parametervariable"><span class="std std-ref">ParameterVariableInterfaceItem</span></a> for details.</p>
+</div>
+</div>
+</div>
+<div class="section" id="shared-variable">
+<span id="vhdlmodel-sharedvariable"></span><h2>Shared Variable<a class="headerlink" href="#shared-variable" title="Permalink to this headline">¶</a></h2>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Write documentation.</p>
+</div>
+</div>
+<div class="section" id="signals">
+<span id="vhdlmodel-signals"></span><h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<div class="graphviz"><object data="../_images/inheritance-dab0e60337649b2078c9abe16a83c378e254aaf3.svg" type="image/svg+xml" class="inheritance graphviz">
+<p class="warning">Inheritance diagram of pyVHDLModel.VHDLModel.Signal, pyVHDLModel.VHDLModel.PortSignalInterfaceItem, pyVHDLModel.VHDLModel.ParameterSignalInterfaceItem</p></object></div>
+<div class="section" id="signal">
+<span id="vhdlmodel-signal"></span><h3>Signal<a class="headerlink" href="#signal" title="Permalink to this headline">¶</a></h3>
+<p>A signal represents mutable data in concurrent regions. Assignments to signals
+are delayed until next wait statement is executed. The initial value can be
+assigned via a default expression.</p>
+<p><strong>Condensed definition of class</strong> <a class="reference internal" href="../pyVHDLModel/pyVHDLModel.VHDLModel.html#pyVHDLModel.VHDLModel.Signal" title="pyVHDLModel.VHDLModel.Signal"><code class="xref py py-class docutils literal notranslate"><span class="pre">Signal</span></code></a>:</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="nd">@export</span>
+<span class="k">class</span> <span class="nc">Signal</span><span class="p">(</span><span class="n">Object</span><span class="p">):</span>
+  <span class="c1"># inherited from ModelEntity</span>
+  <span class="nd">@property</span>
+  <span class="k">def</span> <span class="nf">Parent</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ModelEntity</span><span class="p">:</span>
+
+  <span class="c1"># inherited from NamedEntity</span>
+  <span class="nd">@property</span>
+  <span class="k">def</span> <span class="nf">Name</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+
+  <span class="c1"># inherited from Object</span>
+  <span class="nd">@property</span>
+  <span class="k">def</span> <span class="nf">SubType</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SubType</span><span class="p">:</span>
+
+  <span class="c1"># inherited from WithDefaultExpression</span>
+  <span class="nd">@property</span>
+  <span class="k">def</span> <span class="nf">DefaultExpression</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BaseExpression</span><span class="p">:</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="signal-as-port">
+<span id="vhdlmodel-obj-portsignal"></span><h3>Signal as Port<a class="headerlink" href="#signal-as-port" title="Permalink to this headline">¶</a></h3>
+<p>A port signal is a <em>regular</em> signal.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference internal" href="InterfaceItems.html#vhdlmodel-portsignal"><span class="std std-ref">PortSignalInterfaceItem</span></a> for details.</p>
+</div>
+</div>
+<div class="section" id="signal-as-parameter">
+<span id="vhdlmodel-obj-parametersignal"></span><h3>Signal as Parameter<a class="headerlink" href="#signal-as-parameter" title="Permalink to this headline">¶</a></h3>
+<p>A parameter signal is a <em>regular</em> signal.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference internal" href="InterfaceItems.html#vhdlmodel-parametersignal"><span class="std std-ref">ParameterSignalInterfaceItem</span></a> for details.</p>
+</div>
+</div>
+</div>
+<div class="section" id="files">
+<span id="vhdlmodel-files"></span><h2>Files<a class="headerlink" href="#files" title="Permalink to this headline">¶</a></h2>
+<div class="graphviz"><object data="../_images/inheritance-b37fcb5018e594f497109bbf0bae781dee2f8bf0.svg" type="image/svg+xml" class="inheritance graphviz">
+<p class="warning">Inheritance diagram of pyVHDLModel.VHDLModel.File, pyVHDLModel.VHDLModel.ParameterFileInterfaceItem</p></object></div>
+<div class="section" id="file">
+<span id="vhdlmodel-file"></span><h3>File<a class="headerlink" href="#file" title="Permalink to this headline">¶</a></h3>
+<div class="admonition-todo admonition" id="id2">
+<p class="admonition-title">Todo</p>
+<p>Write documentation.</p>
+</div>
+</div>
+<div class="section" id="file-as-parameter">
+<span id="vhdlmodel-obj-parameterfile"></span><h3>File as Parameter<a class="headerlink" href="#file-as-parameter" title="Permalink to this headline">¶</a></h3>
+<p>A parameter file is a <em>regular</em> file.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference internal" href="InterfaceItems.html#vhdlmodel-parameterfile"><span class="std std-ref">ParameterFileInterfaceItem</span></a> for details.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="ConcurrentStatements.html" class="btn btn-neutral float-right" title="Concurrent Statements" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="TypeDefinitions.html" class="btn btn-neutral float-left" title="Type Declarations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2016-2021 Patrick Lehmann - Boetzingen, Germany
+      <span class="lastupdated">
+        Last updated on 23.06.2021.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/buildthedocs/sphinx.theme">theme</a>
+    
+    provided by <a href="https://buildthedocs.github.io">Build the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
