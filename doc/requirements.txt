@@ -19,4 +19,4 @@ btd.sphinx.graphviz>=2.3.1.post1
 btd.sphinx.inheritance_diagram>=2.3.1.post1
 
 # Enforce newer version on ReadTheDocs (currently using 2.3.1)
-Pygments>=2.7.2
+Pygments>=2.20.0
