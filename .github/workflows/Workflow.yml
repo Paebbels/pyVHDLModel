@@ -46,7 +46,7 @@ jobs:
 
       - name: Publish coverage at CodeCov
         if: ${{ always() }}
-        uses: codecov/codecov-action@v1
+        uses: codecov/codecov-action@v7
         with:
           file: ./coverage.xml
           flags: unittests
